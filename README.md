@@ -1,3 +1,9 @@
+To Run the Front End:
+- Go into AngularApp 
+- run "npm install"
+- run "npm start"
+- go to http://localhost:4200/ in the browser
+
 "# winning-hackathon Links" 
 
 * Github Repo: https://github.com/austinchambers/winning-hackathon
