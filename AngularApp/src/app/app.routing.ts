@@ -10,6 +10,7 @@ export const routes: Routes = [
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
+
   {
     path: '',
     component: FullLayoutComponent,
@@ -20,6 +21,10 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path: 'connections',
+        loadChildren: './connections/connections.module#ConnectionsModule'
       },
     ]
   }
