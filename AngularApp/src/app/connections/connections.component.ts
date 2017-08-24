@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { ClientComponent } from '../client/client.component';
+import { Client } from '../client';
+import { Connection } from '../connection';
 
 @Component({
   templateUrl: 'connections.component.html',
@@ -7,9 +10,12 @@ import { Router } from '@angular/router';
 })
 export class ConnectionsComponent {
 
+  @ViewChild('clientView') clientView: ClientComponent;
+
   constructor( ) { }
 
   public isClientView: boolean = false;
+
 
   public clientClicked(){
     console.log("client clicked");
