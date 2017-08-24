@@ -1,0 +1,26 @@
+#title {
+  /*border:1px solid black;*/
+}
+
+#clientName{
+  display: inline;
+}
+
+#relationship_table{
+  margin-top: 50px;
+}
+
+#relationship_table table{
+  margin:20px 0;
+}
+
+
+
+.title_details{
+
+}
+
+#title_relation {
+  height: 25px;
+  margin-bottom: 33px;
+}
