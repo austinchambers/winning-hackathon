@@ -1,5 +1,6 @@
 To Run the Front End:
 - Go into AngularApp 
+- make sure npm and node are up to date
 - run "npm install"
 - run "npm start"
 - go to http://localhost:4200/ in the browser
