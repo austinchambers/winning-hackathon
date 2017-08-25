@@ -8,7 +8,7 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <table class="table table-striped table-bordered">
+        <table class="table table-bordered">
           <thead>
           <tr>
             <th>Favorite</th>
@@ -25,7 +25,11 @@
             <td>{{client.name}}</td>
             <td>{{client.connections[0].ourRepresentative}}</td>
             <td>{{client.connections[0].theirRepresentative}}</td>
-            <td><span [ngClass]="(client.connections[0].strength > 7) ? 'badge badge-success' : (client.connections[0].strength > 3) ? 'badge badge-warning' : 'badge badge-danger'">{{client.connections[0].strength}}</span></td>
+            <td>
+              <div class="progress">
+                <div [ngClass]="(client.connections[0].strength > 7) ? 'progress-bar bg-success' : (client.connections[0].strength > 3) ? 'progress-bar bg-warning' : 'progress-bar bg-danger'" role="progressbar" [style.width]="client.connections[0].strength * 10 + '%'" [attr.aria-valuenow]="client.connections[0].strength" aria-valuemin="0" aria-valuemax="10">{{client.connections[0].strength}}</div>
+              </div>
+            </td>
             <td>{{client.connections.length}}</td>
           </tr>
           </tbody>
