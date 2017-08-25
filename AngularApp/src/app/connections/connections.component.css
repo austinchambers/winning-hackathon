@@ -6,6 +6,10 @@
   display: inline;
 }
 
+#relationship_table .nav-tabs {
+  border-bottom:none;
+}
+
 #relationship_table{
   margin-top: 50px;
 }
