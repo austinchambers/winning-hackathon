@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b059a990-dd0b-4596-a608-364b6cb06530" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AngularApp/src/app/connections/connections.component.ts" afterPath="$PROJECT_DIR$/AngularApp/src/app/connections/connections.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AngularApp/src/app/dashboard/dashboard.component.ts" afterPath="$PROJECT_DIR$/AngularApp/src/app/dashboard/dashboard.component.ts" />
     </list>
@@ -17,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboard.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AngularApp/src/app/dashboard/dashboard.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="384" column="6" lean-forward="false" selection-start-line="384" selection-start-column="6" selection-end-line="384" selection-end-column="6" />
+            <state relative-caret-position="210">
+              <caret line="85" column="7" lean-forward="false" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
@@ -83,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connections.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="connections.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AngularApp/src/app/connections/connections.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="66" column="10" lean-forward="false" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+            <state relative-caret-position="198">
+              <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
@@ -160,9 +159,9 @@
       <find>RouterModule.forRoot</find>
       <find>drag</find>
       <find>console</find>
-      <find>second-bag</find>
       <find>c</find>
       <find>console.log</find>
+      <find>second-bag</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/AngularApp/src/app</dir>
@@ -208,8 +207,8 @@
         <option value="$PROJECT_DIR$/AngularApp/src/app/dashboard/dashboard.component.css" />
         <option value="$PROJECT_DIR$/AngularApp/src/app/dashboard/dashboard.component.html" />
         <option value="$PROJECT_DIR$/AngularApp/src/app/client/client.component.ts" />
-        <option value="$PROJECT_DIR$/AngularApp/src/app/connections/connections.component.ts" />
         <option value="$PROJECT_DIR$/AngularApp/src/app/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/AngularApp/src/app/connections/connections.component.ts" />
       </list>
     </option>
   </component>
@@ -1658,12 +1657,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1503598842250</updated>
-      <workItem from="1503598846543" duration="43102000" />
+      <workItem from="1503598846543" duration="43273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43039000" />
+    <option name="totallyTimeSpent" value="43210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="139" y="23" width="1141" height="712" extended-state="0" />
@@ -2162,20 +2161,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AngularApp/src/app/connections/connections.component.ts">
+    <entry file="file://$PROJECT_DIR$/AngularApp/src/app/dashboard/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="66" column="10" lean-forward="false" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+        <state relative-caret-position="210">
+          <caret line="85" column="7" lean-forward="false" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AngularApp/src/app/dashboard/dashboard.component.ts">
+    <entry file="file://$PROJECT_DIR$/AngularApp/src/app/connections/connections.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="384" column="6" lean-forward="false" selection-start-line="384" selection-start-column="6" selection-end-line="384" selection-end-column="6" />
+        <state relative-caret-position="198">
+          <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
