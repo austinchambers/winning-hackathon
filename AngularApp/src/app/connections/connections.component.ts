@@ -141,6 +141,8 @@ export class ConnectionsComponent {
     let activeClientName = event.path[1].cells[1].innerText;
     this.activeClient = this.clientArray.find(client => client.name == activeClientName);
     this.isClientView = true;
+    let that = this;
+    setTimeout(function() { that.clientView.refreshClientPage(); }, 200);
   }
 
   public backButtonClicked(){
