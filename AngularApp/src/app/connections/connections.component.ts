@@ -1,8 +1,11 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClientComponent } from '../client/client.component';
+import {HttpClient} from '@angular/common/http';
 import { Client } from '../client';
 import { Connection } from '../connection';
+//import { clientItem, connectionItem } from '../clientItem';
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   templateUrl: 'connections.component.html',
@@ -12,33 +15,48 @@ export class ConnectionsComponent {
 
   @ViewChild('clientView') clientView: ClientComponent;
 
-  constructor( ) { }
+  constructor(private http: HttpClient) {}
 
   public isClientView: boolean = false;
 
   public sampleConnection = new Connection("Sean", "Kushan", 8);
 
-  public sampleConnection2 = new Connection("Fabio", "Austin", 5);
-
-  public sampleConnection3 = new Connection("Brian", "Bob", 2);
-
   public testClient = new Client("Apple", [this.sampleConnection]);
 
-  public testClient2 = new Client("Microsoft", [this.sampleConnection2]);
+  public clientArray: Array<Client> = [];
 
-  public testClient3 = new Client("Google", [this.sampleConnection3]);
+  public activeClient: Client = this.testClient;
 
-  public clientArray: Array<Client> = [this.testClient, this.testClient2, this.testClient3];
+  public rawData: any;
 
-  public activeClient: Client = this.clientArray[0];
 
 
   /**
    * Calls lifecycle hook that is called after data-bound properties of a directive are initialized.
    */
   public ngOnInit() {
+    // Make the HTTP request:
+    this.http.get('http://192.168.255.214:3000').subscribe(data => {
+      // Read the result field from the JSON response.
+      console.log("data", data);
+      this.rawData = data;
+
+      this.parseClientData(this.rawData);
+      //console.log(this.clientArray);
+    });
 
   }
+
+  private parseClientData(rawData){
+    rawData.forEach((client: clientItem, index: number) => {
+      let connectionArray: Array<Connection> = [];
+      client.connections.forEach((connection: connectionItem, index: number) => {
+        connectionArray.push(new Connection(connection.ourRep, connection.theirRep, connection.strength))
+      });
+      this.clientArray.push(new Client(client.name, connectionArray));
+    });
+  }
+
 
   public clientClicked(event){
     let activeClientName = event.path[1].cells[1].innerText;
@@ -52,4 +70,15 @@ export class ConnectionsComponent {
     this.isClientView = false;
   }
 
+}
+
+interface clientItem {
+  name: string,
+  connections: Array<connectionItem>
+}
+
+interface connectionItem {
+  ourRep: string,
+  theirRep: string,
+  strength: number
 }

@@ -9,59 +9,35 @@
   </div>
 
   <div class="row">
-    
+
   </div>
 
   <div class="row">
 
     <div class="col-sm-6 col-md-3">
-      <div class="card pipeline-stage">
-        <div class="card-header">
-          Qualification
+      <!--<div class="row dragdrop">-->
+
+        <div class="card pipeline-stage">
+          <div class="card-header">
+            Qualification
+          </div>
+          <div class="card-body">
+            <div *ngFor="let client of clientArray; let i = index">
+              <div class="col-md-12">
+                <div class="card card-accent-secondary">
+                  <div class="card-header drag">
+                    {{client.name}}
+                  </div>
+                  <div class="card-body">
+                    {{client.connections[0].ourRepresentative}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
 
-          <div class="row dragdrop">
-            <div class="col-md-12">
-              <div class="card card-accent-secondary">
-                <div class="card-header drag">
-                  Bank of America
-                </div>
-                <div class="card-body">
-                  blah blah
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row dragdrop">
-            <div class="col-md-12">
-              <div class="card card-accent-secondary">
-                <div class="card-header drag">
-                  Chase Manhattan
-                </div>
-                <div class="card-body">
-                  blah blah
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row dragdrop">
-            <div class="col-md-12">
-              <div class="card card-accent-secondary">
-                <div class="card-header drag">
-                  Google
-                </div>
-                <div class="card-body">
-                  blah blah
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <!--</div>-->
     </div>
 
     <div class="col-sm-6 col-md-3">
