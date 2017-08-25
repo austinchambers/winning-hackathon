@@ -49,8 +49,9 @@ export class ClientComponent implements OnInit {
         type: 'forceDirectedGraph',
         height: 300,
         width: (function () {
-          return nv.utils.windowSize().width/2;
+          return nv.utils.windowSize().width/(1.5);
         })(),
+        showLabels: false,
         margin: {top: 20, right: 20, bottom: 20, left: 20},
         color: function (d) {
           return color(d.group)
@@ -67,36 +68,20 @@ export class ClientComponent implements OnInit {
         }
       }
     }
-    console.log("client", this.client);
-    this.data =
-      {
-        "nodes":[
-          {"name":"Myriel","group":1},
-          {"name":"Napoleon","group":1},
-          {"name":"Mlle.Baptistine","group":1},
-          {"name":"Mme.Magloire","group":5},
-          {"name":"CountessdeLo","group":5},
-          {"name":"Geborand","group":1},
-          {"name":"Champtercier","group":1},
-          {"name":"Cravatte","group":16},
-          {"name":"Count","group":1},
-          {"name":"OldMan","group":1}
+    this.refreshClientPage();
 
-        ],
-        "links":[
-          {"source":1,"target":0,"value":1},
-          {"source":2,"target":0,"value":8},
-          {"source":3,"target":0,"value":10},
-          {"source":3,"target":2,"value":6},
-          {"source":4,"target":0,"value":1},
-          {"source":5,"target":0,"value":1},
-          {"source":6,"target":0,"value":1},
-          {"source":7,"target":0,"value":1},
-          {"source":8,"target":0,"value":2},
-          {"source":9,"target":0,"value":1}
+  }
 
-        ]
-      }
-
+  public refreshClientPage(){
+    this.data = {"nodes":[], "links":[]};
+    let nodeObj = {"name": this.client.name, "group":1};
+    let linksObj = {"source": null, "target":0, "value":1};
+    this.data.nodes.push(nodeObj);
+    for(let i = 0; i < this.client.connections.length; i++){
+      nodeObj = {"name": this.client.connections[i].ourRepresentative, "group":this.client.connections[i].strength}
+      this.data.nodes.push(nodeObj);
+      linksObj = {"source": i+1, "target":0, "value": (this.client.connections[i].strength*2)};
+      this.data.links.push(linksObj);
+    }
   }
 }
