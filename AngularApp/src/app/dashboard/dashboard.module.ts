@@ -5,12 +5,14 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import {CommonModule} from "@angular/common";
 import { OpportunityClientComponent } from '../opportunity-client/opportunity-client.component';
+import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 
 @NgModule({
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    ChartsModule
+    ChartsModule,
+    DragulaModule
   ],
   declarations: [
     DashboardComponent,

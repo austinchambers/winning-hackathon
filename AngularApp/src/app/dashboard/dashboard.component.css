@@ -6,3 +6,12 @@
   color: #00aced;
   margin-bottom: 10px;
 }
+
+.columnHeader {
+  margin-top: 10px;
+  align-content: center;
+}
+
+.backButton {
+  margin: 10px;
+}

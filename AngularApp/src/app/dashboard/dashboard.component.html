@@ -1,90 +1,123 @@
+<!--<div class="animated fadeIn">-->
+  <!--<div [hidden]="isClientView">-->
+    <!--<div class="row">-->
+      <!--<div class="col-sm-6 col-md-12">-->
+        <!--<h2 class="headerTitle">-->
+          <!--<i class="fa fa-list fa-lg mt-4"></i>-->
+          <!--Pipeline-->
+        <!--</h2>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+
+      <!--<div class="col-sm-6 col-md-3">-->
+        <!--<div class="card pipeline-stage">-->
+          <!--<div class="card-header">-->
+            <!--Qualification-->
+          <!--</div>-->
+          <!--<div class="card-body">-->
+            <!--<div *ngFor="let client of clientArray; let i = index">-->
+              <!--<div class="col-md-12">-->
+                <!--<div class="card card-accent-secondary" (click)="clientCardClicked($event)">-->
+                  <!--<div class="card-header drag">-->
+                    <!--{{client.name}}-->
+                  <!--</div>-->
+                  <!--<div class="card-body">-->
+                    <!--{{client.connections[0].ourRepresentative}}-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div class="col-sm-6 col-md-3">-->
+        <!--<div class="card pipeline-stage">-->
+          <!--<div class="card-header">-->
+            <!--Pitch / Quote-->
+          <!--</div>-->
+          <!--<div class="card-body">-->
+
+            <!--<div class="row dragdrop">-->
+              <!--<div class="col-md-12">-->
+
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div class="col-sm-6 col-md-3">-->
+        <!--<div class="card pipeline-stage">-->
+          <!--<div class="card-header">-->
+            <!--Negotiation-->
+          <!--</div>-->
+          <!--<div class="card-body">-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+      <!--<div class="col-sm-6 col-md-3">-->
+        <!--<div class="card pipeline-stage">-->
+          <!--<div class="card-header">-->
+            <!--Closed-->
+          <!--</div>-->
+          <!--<div class="card-body">-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</div>-->
 <div class="animated fadeIn">
   <div [hidden]="isClientView">
-    <div class="row">
-      <div class="col-sm-6 col-md-12">
-        <h2 class="headerTitle">
-          <i class="fa fa-list fa-lg mt-4"></i>
-          Pipeline
-        </h2>
-      </div>
-    </div>
-
-    <div class="row">
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-sm-6 col-md-3">
-        <div class="card pipeline-stage">
-          <div class="card-header">
-            Qualification
-          </div>
-          <div class="card-body">
-            <div *ngFor="let client of clientArray; let i = index">
-              <div class="col-md-12">
-                <div class="card card-accent-secondary" (click)="clientCardClicked($event)">
-                  <div class="card-header drag">
-                    {{client.name}}
-                  </div>
-                  <div class="card-body">
-                    {{client.connections[0].ourRepresentative}}
-                  </div>
-                </div>
-              </div>
+  <div class="row">
+    <div class="col-md-3">
+      <h4 class="columnHeader"> Qualification </h4>
+      <div class="row dragdrop" [dragula]='"second-bag"'>
+        <div class="col-md-12" *ngFor="let client of clientArray; let i = index">
+          <div class="card card-accent-secondary" (click)="clientCardClicked($event)">
+            <div class="card-header drag">
+              {{client.name}}
+            </div>
+            <div class="card-body">
+              Our best connection: {{client.connections[0].ourRepresentative}} with strength {{client.connections[0].strength}}
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-md-3">
+      <h4 class="columnHeader"> Pitch / Quote </h4>
+      <div class="row dragdrop" [dragula]='"second-bag"'>
+        <div class="col-md-12">
 
-      <div class="col-sm-6 col-md-3">
-        <div class="card pipeline-stage">
-          <div class="card-header">
-            Pitch / Quote
-          </div>
-          <div class="card-body">
-
-            <div class="row dragdrop">
-              <div class="col-md-12">
-                <div class="card card-accent-secondary">
-                  <div class="card-header drag">
-                    Yahoo!
-                  </div>
-                  <div class="card-body">
-                    blah blah
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+    </div>
+    <div class="col-md-3">
+      <h4 class="columnHeader"> Negotiation </h4>
+      <div class="row dragdrop" [dragula]='"second-bag"'>
+        <div class="col-md-12">
 
-      <div class="col-sm-6 col-md-3">
-        <div class="card pipeline-stage">
-          <div class="card-header">
-            Negotiation
-          </div>
-          <div class="card-body">
-          </div>
         </div>
       </div>
-
-
-      <div class="col-sm-6 col-md-3">
-        <div class="card pipeline-stage">
-          <div class="card-header">
-            Closed
-          </div>
-          <div class="card-body">
-          </div>
+    </div>
+    <div class="col-md-3">
+      <h4 class="columnHeader"> Closed </h4>
+      <div class="row dragdrop" [dragula]='"second-bag"'>
+        <div class="col-md-12">
+          
         </div>
       </div>
-
     </div>
   </div>
+</div>
   <div class="clientTable" [hidden]="!isClientView">
     <opportunity-client-component #clientView [client]="activeClient"></opportunity-client-component>
-    <button type="button" (click)="backButtonClicked()" class="btn btn-secondary">Back</button>
+    <button type="button" (click)="backButtonClicked()" class="btn btn-secondary backButton">Back</button>
   </div>
 </div>
