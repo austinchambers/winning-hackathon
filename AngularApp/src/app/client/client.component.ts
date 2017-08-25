@@ -17,13 +17,12 @@ declare let d3: any;
 export class ClientComponent implements OnInit {
   encapsulation: ViewEncapsulation.None;
 
-  @Input()
 
   // graphic variable
   options;
   data;
 
-
+  @Input()
   public client: Client;
 
   public isClientView: boolean = false;
@@ -31,25 +30,13 @@ export class ClientComponent implements OnInit {
   public tableView: boolean = true;
   public graphicView: boolean = false;
 
-  public clientClicked(){
-    console.log("client clicked");
-    this.isClientView = true;
-  }
-
-  public backButtonClicked(){
-    console.log("back clicked");
-    this.isClientView = false;
-  }
-
   public enableTableView()
   {
-    console.log("table view enable");
     this.tableView = true;
     this.graphicView = false;
   }
 
   public enablegraphicView(){
-    console.log("graphic view enable");
     this.tableView = false;
     this.graphicView = true;
   }

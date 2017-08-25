@@ -1,3 +1,8 @@
 .pipeline-stage {
   min-height: 493px;
 }
+
+.headerTitle {
+  color: #00aced;
+  margin-bottom: 10px;
+}

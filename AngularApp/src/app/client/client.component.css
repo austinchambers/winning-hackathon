@@ -11,7 +11,7 @@
 }
 
 #relationship_table{
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #relationship_table table{
@@ -24,9 +24,19 @@
   margin-bottom: 20px;
 }
 
+.headerTitle {
+  color: #00aced;
+  margin-top: 10px;
+}
+
 #title_relation {
   height: 25px;
   margin-bottom: 33px;
 }
 
-
+.clientData {
+  border: 1px solid darkgray;
+  margin: 5px;
+  padding: 5px;
+  background-color: whitesmoke;
+}

@@ -4,6 +4,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { ConnectionsComponent } from './connections.component';
 import { ConnectionsRoutingModule } from './connections-routing.module';
 import { ClientComponent } from '../client/client.component';
+import {CommonModule} from "@angular/common";
 
 import { NvD3Module } from 'ng2-nvd3';
 
@@ -13,6 +14,7 @@ import 'nvd3';
 
 @NgModule({
   imports: [
+    CommonModule,
     ConnectionsRoutingModule,
     ChartsModule,
     NvD3Module

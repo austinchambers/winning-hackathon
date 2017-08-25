@@ -1,7 +1,12 @@
-#title {
-  /*border:1px solid black;*/
+.clients-table-row:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
 
+.headerTitle {
+  margin: 15px;
+  color: #00aced;
+}
 #clientName{
   display: inline;
 }
@@ -17,8 +22,6 @@
 #relationship_table table{
   margin:20px 0;
 }
-
-
 
 .title_details{
 
