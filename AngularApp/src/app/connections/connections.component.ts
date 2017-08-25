@@ -72,7 +72,7 @@ export class ConnectionsComponent {
     rawData.forEach((client: clientItem, index: number) => {
       let connectionArray: Array<Connection> = [];
       client.connections.forEach((connection: connectionItem, index: number) => {
-        connectionArray.push(new Connection(connection.ourRep, connection.theirRep, connection.strength))
+        connectionArray.push(new Connection(connection.ourRep, connection.theirRep, Math.round(connection.strength)))
       });
       this.clientArray.push(new Client(client.name, connectionArray));
     });

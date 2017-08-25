@@ -79,7 +79,7 @@ export class DashboardComponent {
     }
 
     // Make the HTTP request:
-    this.http.get('/api/items').subscribe(data => {
+    this.http.get('http://192.168.255.214:3000').subscribe(data => {
       // Read the result field from the JSON response.
       this.rawData = data;
       this.parseClientData(this.rawData);
@@ -91,7 +91,7 @@ export class DashboardComponent {
     rawData.forEach((client: clientItem, index: number) => {
       let connectionArray: Array<Connection> = [];
       client.connections.forEach((connection: connectionItem, index: number) => {
-        connectionArray.push(new Connection(connection.ourRep, connection.theirRep, connection.strength))
+        connectionArray.push(new Connection(connection.ourRep, connection.theirRep, Math.round(connection.strength)))
       });
       this.clientArray.push(new Client(client.name, connectionArray));
     });
