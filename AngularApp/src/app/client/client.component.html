@@ -32,10 +32,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th>Fabio</th>
-              <th>Austin</th>
-              <th>0.5</th>
+            <tr *ngFor="let connection of client.connections; let i = index">
+              <td>{{connection.ourRepresentative}}</td>
+              <td>{{connection.theirRepresentative}}</td>
+              <td><span [ngClass]="(connection.strength > 7) ? 'badge badge-success' : (connection.strength > 3) ? 'badge badge-warning' : 'badge badge-danger'">{{connection.strength}}</span></td>
+
             </tr>
             </tbody>
           </table>

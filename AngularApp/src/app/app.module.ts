@@ -12,11 +12,11 @@ import { SIDEBAR_TOGGLE_DIRECTIVES } from './shared/sidebar.directive';
 import { AsideToggleDirective } from './shared/aside.directive';
 import { BreadcrumbsComponent } from './shared/breadcrumb.component';
 
-// Routing Module
 import { AppRoutingModule } from './app.routing';
 
-// Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
+
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { FullLayoutComponent } from './layouts/full-layout.component';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
