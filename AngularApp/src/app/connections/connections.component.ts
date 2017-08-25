@@ -6,7 +6,7 @@ import { Connection } from '../connection';
 
 @Component({
   templateUrl: 'connections.component.html',
-  styleUrls: ['connections.component.css','../../../node_modules/nvd3/build/nv.d3.css']
+  styleUrls: ['connections.component.css']
 })
 export class ConnectionsComponent {
 
