@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { OpportunityClientComponent } from '../opportunity-client/opportunity-client.component';
 import {HttpClient} from '@angular/common/http';
 import {Client} from '../client';
 import {Connection} from '../connection';
@@ -10,10 +11,43 @@ import {Connection} from '../connection';
 })
 export class DashboardComponent {
 
+  @ViewChild('clientView') clientView: OpportunityClientComponent;
+
   constructor(private http: HttpClient) {}
 
+  /**
+   * True when the page is in client view, false otherwise
+   * @type {boolean}
+   */
+  public isClientView: boolean = false;
+
+  /**
+   * Mock data for the intial page loading
+   * @type {Connection}
+   */
+  public sampleConnection = new Connection("Sean", "Kushan", 8);
+
+  /**
+   * mock data for the initial page loading
+   * @type {Client}
+   */
+  public testClient = new Client("Apple", [this.sampleConnection]);
+
+  /**
+   * stores the list of clients to be displayed by the table
+   * @type {Array}
+   */
   public clientArray: Array<Client> = [];
 
+  /**
+   * the client which was last clicked on
+   * @type {Client}
+   */
+  public activeClient: Client = this.testClient;
+
+  /**
+   * the raw data recieved from API
+   */
   public rawData: any;
 
   /**
@@ -96,6 +130,17 @@ export class DashboardComponent {
       });
       this.clientArray.push(new Client(client.name, connectionArray));
     });
+  }
+
+  private clientCardClicked(event){
+    let activeClientName = event.path[1].children[0].innerText;
+    console.log(activeClientName);
+    this.activeClient = this.clientArray.find(client => client.name == activeClientName);
+    this.isClientView = true;
+  }
+
+  public backButtonClicked(){
+    this.isClientView = false;
   }
 
 }

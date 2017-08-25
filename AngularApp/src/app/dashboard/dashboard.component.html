@@ -1,22 +1,21 @@
 <div class="animated fadeIn">
-  <div class="row">
-    <div class="col-sm-6 col-md-12">
-      <h2 class="headerTitle">
-        <i class="fa fa-list fa-lg mt-4"></i>
-        Pipeline
-      </h2>
+  <div [hidden]="isClientView">
+    <div class="row">
+      <div class="col-sm-6 col-md-12">
+        <h2 class="headerTitle">
+          <i class="fa fa-list fa-lg mt-4"></i>
+          Pipeline
+        </h2>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
+    <div class="row">
 
-  </div>
+    </div>
 
-  <div class="row">
+    <div class="row">
 
-    <div class="col-sm-6 col-md-3">
-      <!--<div class="row dragdrop">-->
-
+      <div class="col-sm-6 col-md-3">
         <div class="card pipeline-stage">
           <div class="card-header">
             Qualification
@@ -24,7 +23,7 @@
           <div class="card-body">
             <div *ngFor="let client of clientArray; let i = index">
               <div class="col-md-12">
-                <div class="card card-accent-secondary">
+                <div class="card card-accent-secondary" (click)="clientCardClicked($event)">
                   <div class="card-header drag">
                     {{client.name}}
                   </div>
@@ -36,53 +35,56 @@
             </div>
           </div>
         </div>
+      </div>
 
-      <!--</div>-->
-    </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="card pipeline-stage">
+          <div class="card-header">
+            Pitch / Quote
+          </div>
+          <div class="card-body">
 
-    <div class="col-sm-6 col-md-3">
-      <div class="card pipeline-stage">
-        <div class="card-header">
-          Pitch / Quote
-        </div>
-        <div class="card-body">
-
-          <div class="row dragdrop">
-            <div class="col-md-12">
-              <div class="card card-accent-secondary">
-                <div class="card-header drag">
-                  Yahoo!
-                </div>
-                <div class="card-body">
-                  blah blah
+            <div class="row dragdrop">
+              <div class="col-md-12">
+                <div class="card card-accent-secondary">
+                  <div class="card-header drag">
+                    Yahoo!
+                  </div>
+                  <div class="card-body">
+                    blah blah
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-sm-6 col-md-3">
-      <div class="card pipeline-stage">
-        <div class="card-header">
-          Negotiation
-        </div>
-        <div class="card-body">
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-sm-6 col-md-3">
-      <div class="card pipeline-stage">
-        <div class="card-header">
-          Closed
-        </div>
-        <div class="card-body">
+      <div class="col-sm-6 col-md-3">
+        <div class="card pipeline-stage">
+          <div class="card-header">
+            Negotiation
+          </div>
+          <div class="card-body">
+          </div>
         </div>
       </div>
-    </div>
 
+
+      <div class="col-sm-6 col-md-3">
+        <div class="card pipeline-stage">
+          <div class="card-header">
+            Closed
+          </div>
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="clientTable" [hidden]="!isClientView">
+    <opportunity-client-component #clientView [client]="activeClient"></opportunity-client-component>
+    <button type="button" (click)="backButtonClicked()" class="btn btn-secondary">Back</button>
   </div>
 </div>

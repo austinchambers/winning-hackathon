@@ -47,9 +47,9 @@ export class ClientComponent implements OnInit {
     this.options = {
       chart: {
         type: 'forceDirectedGraph',
-        height: 500,
+        height: 300,
         width: (function () {
-          return nv.utils.windowSize().width
+          return nv.utils.windowSize().width/2;
         })(),
         margin: {top: 20, right: 20, bottom: 20, left: 20},
         color: function (d) {
@@ -67,7 +67,7 @@ export class ClientComponent implements OnInit {
         }
       }
     }
-
+    console.log("client", this.client);
     this.data =
       {
         "nodes":[
